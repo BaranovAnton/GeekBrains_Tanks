@@ -14,7 +14,7 @@ public class TurretShot : MonoBehaviour {
     void OnTriggerEnter(Collider coll)
     {
         if (coll.CompareTag("Player")) { 
-            coll.GetComponent<TankHealth>().GetHit(damage);
+            coll.GetComponent<Tank>().GetHit(damage);
             Destroy(gameObject);
         }
     }

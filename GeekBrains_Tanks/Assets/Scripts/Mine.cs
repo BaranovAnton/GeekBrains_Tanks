@@ -3,14 +3,13 @@ using System.Collections;
 
 public class Mine : MonoBehaviour {
 
-    public int damage;
+    public float damage;
 
     void OnTriggerEnter(Collider coll)
     {
         if (coll.CompareTag("Player"))
         {
-            coll.GetComponent<TankHealth>().GetHit(damage);
-            MinesManager.count--;
+            coll.GetComponent<Tank>().GetHit(damage);
             Destroy(gameObject);
         }
     }

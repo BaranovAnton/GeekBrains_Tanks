@@ -7,26 +7,20 @@ public class MinesManager : MonoBehaviour {
     public float radius;
     public Transform[] spawnPoints;
 
-    public static int count;
-
-    private int spawnIndex;
     private Vector3 spawnPosition;
 
     void Start () {
-        InvokeRepeating("SpawnMine", 0, 5);
+        SpawnMines();
 	}
 
-    private void SpawnMine()
+    private void SpawnMines()
     {
-        if (count < 3)
+        for (int i=0; i<spawnPoints.Length; i++)
         {
-            spawnIndex = Random.Range(0, spawnPoints.Length);
-            spawnPosition = spawnPoints[spawnIndex].position;
+            spawnPosition = spawnPoints[i].position;
             float randomDelta = Random.Range(-radius, radius);
             spawnPosition = new Vector3(spawnPosition.x + randomDelta, spawnPosition.y, spawnPosition.z + randomDelta);
             GameObject bonus = Instantiate(minePrefab, spawnPosition, Quaternion.identity) as GameObject;
-
-            count++;
         }
     }
 }
