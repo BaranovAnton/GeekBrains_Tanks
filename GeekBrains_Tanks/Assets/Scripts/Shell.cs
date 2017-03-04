@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Shell : MonoBehaviour {
 
+    public bool available;
     public int damage;
     public float fireForce;
     public float rechargeTime;

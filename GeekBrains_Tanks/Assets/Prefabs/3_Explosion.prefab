@@ -21,11 +21,12 @@ GameObject:
   - component: {fileID: 4000012668991928}
   - component: {fileID: 33000011313257898}
   - component: {fileID: 23000012144311312}
-  - component: {fileID: 65000010404863660}
+  - component: {fileID: 65000010118037574}
   - component: {fileID: 54000012077639658}
-  - component: {fileID: 114000013328009580}
+  - component: {fileID: 114000010822939808}
+  - component: {fileID: 114085902216551246}
   m_Layer: 0
-  m_Name: ShellRed
+  m_Name: 3_Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 12ad0fb90f1c51a4f819d9e99e579cdb, type: 2}
+  - {fileID: 2100000, guid: 7a42549690b2bb144a0b62822ed011fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +98,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65000010404863660
+--- !u!65 &65000010118037574
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -109,7 +110,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2987081, y: 0.29870814, z: 0.5252612}
   m_Center: {x: 0, y: 0.000000007450581, z: 0.19800001}
---- !u!114 &114000013328009580
+--- !u!114 &114000010822939808
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -120,7 +121,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5857e2bc963a8a349a338462a31e1efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  fireForce: 15
+  available: 1
+  damage: 10
+  fireForce: 20
   rechargeTime: 3
   lifeTime: 2
+--- !u!114 &114085902216551246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013765787756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23c457797e20e647b9cb45528a2b0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newShell: {fileID: 1000013765787756, guid: 1ddad94dcf9bdec4b99c4c32fa9bed08, type: 2}
+  explosionTime: 0.2
+  explosionCount: 5
+  explosionAngle: 90

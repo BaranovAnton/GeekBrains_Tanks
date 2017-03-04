@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54000012077639658}
   - component: {fileID: 114000011575973956}
   m_Layer: 0
-  m_Name: ShellGold
+  m_Name: 1_Simple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5857e2bc963a8a349a338462a31e1efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
-  fireForce: 25
+  available: 1
+  damage: 10
+  fireForce: 20
   rechargeTime: 1
   lifeTime: 2
