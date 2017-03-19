@@ -5,7 +5,7 @@ public class TurretController : MonoBehaviour
 {
     public int health;
     public GameObject shellPrefab;
-    public Transform spawnPoint;
+    public Transform[] spawnPoint;
     public int rotationSpeed;
     public float rechargeTime;
     public int fireForce;
@@ -18,7 +18,7 @@ public class TurretController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player = other.transform;
-            shootCoroutine = StartCoroutine(Shoot());          
+            shootCoroutine = StartCoroutine(Shoot());
         }
     }
 
@@ -42,9 +42,6 @@ public class TurretController : MonoBehaviour
     {
         if (player != null)
         {
-            // Простой вариант поворота турели в направлении игрока. Но первоначально поворот происходит мгновенно, а не плавно
-            // transform.LookAt(player);
-            // Другой вариант. Турель поворачивается медленно в сторону игрока
             Quaternion rotation = Quaternion.LookRotation(player.position - transform.position);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
@@ -54,11 +51,14 @@ public class TurretController : MonoBehaviour
     {
         while (true)
         {
-            GameObject shell = Instantiate(shellPrefab, spawnPoint.position, spawnPoint.rotation) as GameObject;
-            Rigidbody shellRigidbody = shell.GetComponent<Rigidbody>();
-            shellRigidbody.velocity = fireForce * spawnPoint.forward;
+            for (int i=0; i<spawnPoint.Length; i++)
+            {
+                GameObject shell = Instantiate(shellPrefab, spawnPoint[i].position, spawnPoint[i].rotation) as GameObject;
+                Rigidbody shellRigidbody = shell.GetComponent<Rigidbody>();
+                shellRigidbody.velocity = fireForce * spawnPoint[i].forward;
+            }  
 
             yield return new WaitForSeconds(rechargeTime);
-        }   
+        }
     }
 }

@@ -124,7 +124,7 @@ MonoBehaviour:
   available: 1
   damage: 10
   fireForce: 20
-  rechargeTime: 3
+  rechargeTime: 1
   lifeTime: 2
 --- !u!114 &114085902216551246
 MonoBehaviour:
@@ -139,5 +139,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newShell: {fileID: 1000013765787756, guid: 1ddad94dcf9bdec4b99c4c32fa9bed08, type: 2}
   explosionTime: 0.2
-  explosionCount: 5
-  explosionAngle: 90
+  explosionCount: 9
+  explosionAngle: 45
