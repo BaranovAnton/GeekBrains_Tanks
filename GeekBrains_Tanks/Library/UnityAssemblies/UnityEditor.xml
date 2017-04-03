@@ -508,6 +508,14 @@
         <para>The color used to show that a property is currently being animated.</para>
       </summary>
     </member>
+    <member name="M:UnityEditor.AnimationMode.AddPropertyModification(UnityEditor.EditorCurveBinding,UnityEditor.PropertyModification,System.Boolean)">
+      <summary>
+        <para>Marks a property as currently being animated.</para>
+      </summary>
+      <param name="binding">Description of the animation clip curve being modified.</param>
+      <param name="modification">Object property being modified.</param>
+      <param name="keepPrefabOverride">Indicates whether to retain modifications when the targeted object is an instance of prefab.</param>
+    </member>
     <member name="M:UnityEditor.AnimationMode.BeginSampling">
       <summary>
         <para>Initialise the start of the animation clip sampling.</para>
@@ -2557,6 +2565,54 @@ Units is normalized time.</para>
       </summary>
       <param name="assetPath">Filesystem path of the asset to load.</param>
     </member>
+    <member name="M:UnityEditor.AssetDatabase.IsMetaFileOpenForEdit(UnityEngine.Object,UnityEditor.StatusQueryOptions)">
+      <summary>
+        <para>Query whether an asset's metadata (.meta) file is open for edit in version control.</para>
+      </summary>
+      <param name="assetObject">Object representing the asset whose metadata status you wish to query.</param>
+      <param name="message">Returns a reason for the asset metadata not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
+      <returns>
+        <para>True if the asset's metadata is considered open for edit by the selected version control system.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.AssetDatabase.IsMetaFileOpenForEdit(UnityEngine.Object,System.String&amp;,UnityEditor.StatusQueryOptions)">
+      <summary>
+        <para>Query whether an asset's metadata (.meta) file is open for edit in version control.</para>
+      </summary>
+      <param name="assetObject">Object representing the asset whose metadata status you wish to query.</param>
+      <param name="message">Returns a reason for the asset metadata not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
+      <returns>
+        <para>True if the asset's metadata is considered open for edit by the selected version control system.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.AssetDatabase.IsMetaFileOpenForEdit(UnityEngine.Object)">
+      <summary>
+        <para>Query whether an asset's metadata (.meta) file is open for edit in version control.</para>
+      </summary>
+      <param name="assetObject">Object representing the asset whose metadata status you wish to query.</param>
+      <param name="message">Returns a reason for the asset metadata not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
+      <returns>
+        <para>True if the asset's metadata is considered open for edit by the selected version control system.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.AssetDatabase.IsMetaFileOpenForEdit(UnityEngine.Object,System.String&amp;)">
+      <summary>
+        <para>Query whether an asset's metadata (.meta) file is open for edit in version control.</para>
+      </summary>
+      <param name="assetObject">Object representing the asset whose metadata status you wish to query.</param>
+      <param name="message">Returns a reason for the asset metadata not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
+      <returns>
+        <para>True if the asset's metadata is considered open for edit by the selected version control system.</para>
+      </returns>
+    </member>
     <member name="M:UnityEditor.AssetDatabase.IsNativeAsset(UnityEngine.Object)">
       <summary>
         <para>Is asset a native asset?</para>
@@ -2571,52 +2627,108 @@ Units is normalized time.</para>
       <param name="obj"></param>
       <param name="instanceID"></param>
     </member>
+    <member name="M:UnityEditor.AssetDatabase.IsOpenForEdit(UnityEngine.Object,UnityEditor.StatusQueryOptions)">
+      <summary>
+        <para>Query whether an asset file is open for edit in version control.</para>
+      </summary>
+      <param name="assetObject">Object representing the asset whose status you wish to query.</param>
+      <param name="assetOrMetaFilePath">Path to the asset file or its .meta file on disk, relative to project folder.</param>
+      <param name="message">Returns a reason for the asset not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
+      <returns>
+        <para>True if the asset is considered open for edit by the selected version control system.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.AssetDatabase.IsOpenForEdit(System.String,UnityEditor.StatusQueryOptions)">
+      <summary>
+        <para>Query whether an asset file is open for edit in version control.</para>
+      </summary>
+      <param name="assetObject">Object representing the asset whose status you wish to query.</param>
+      <param name="assetOrMetaFilePath">Path to the asset file or its .meta file on disk, relative to project folder.</param>
+      <param name="message">Returns a reason for the asset not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
+      <returns>
+        <para>True if the asset is considered open for edit by the selected version control system.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.AssetDatabase.IsOpenForEdit(UnityEngine.Object,System.String&amp;,UnityEditor.StatusQueryOptions)">
+      <summary>
+        <para>Query whether an asset file is open for edit in version control.</para>
+      </summary>
+      <param name="assetObject">Object representing the asset whose status you wish to query.</param>
+      <param name="assetOrMetaFilePath">Path to the asset file or its .meta file on disk, relative to project folder.</param>
+      <param name="message">Returns a reason for the asset not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
+      <returns>
+        <para>True if the asset is considered open for edit by the selected version control system.</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.AssetDatabase.IsOpenForEdit(System.String,System.String&amp;,UnityEditor.StatusQueryOptions)">
+      <summary>
+        <para>Query whether an asset file is open for edit in version control.</para>
+      </summary>
+      <param name="assetObject">Object representing the asset whose status you wish to query.</param>
+      <param name="assetOrMetaFilePath">Path to the asset file or its .meta file on disk, relative to project folder.</param>
+      <param name="message">Returns a reason for the asset not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
+      <returns>
+        <para>True if the asset is considered open for edit by the selected version control system.</para>
+      </returns>
+    </member>
     <member name="M:UnityEditor.AssetDatabase.IsOpenForEdit(UnityEngine.Object)">
       <summary>
-        <para>Use IsOpenForEdit to determine if the asset is open for edit by the version control.</para>
+        <para>Query whether an asset file is open for edit in version control.</para>
       </summary>
-      <param name="assetPath">Is the path to the asset on disk relative to project folder.</param>
-      <param name="message">Used to give reason for not open.</param>
-      <param name="assetObject"></param>
-      <param name="assetOrMetaFilePath"></param>
+      <param name="assetObject">Object representing the asset whose status you wish to query.</param>
+      <param name="assetOrMetaFilePath">Path to the asset file or its .meta file on disk, relative to project folder.</param>
+      <param name="message">Returns a reason for the asset not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
       <returns>
-        <para>True is the asset can be edited.</para>
+        <para>True if the asset is considered open for edit by the selected version control system.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.IsOpenForEdit(System.String)">
       <summary>
-        <para>Use IsOpenForEdit to determine if the asset is open for edit by the version control.</para>
+        <para>Query whether an asset file is open for edit in version control.</para>
       </summary>
-      <param name="assetPath">Is the path to the asset on disk relative to project folder.</param>
-      <param name="message">Used to give reason for not open.</param>
-      <param name="assetObject"></param>
-      <param name="assetOrMetaFilePath"></param>
+      <param name="assetObject">Object representing the asset whose status you wish to query.</param>
+      <param name="assetOrMetaFilePath">Path to the asset file or its .meta file on disk, relative to project folder.</param>
+      <param name="message">Returns a reason for the asset not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
       <returns>
-        <para>True is the asset can be edited.</para>
+        <para>True if the asset is considered open for edit by the selected version control system.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.IsOpenForEdit(UnityEngine.Object,System.String&amp;)">
       <summary>
-        <para>Use IsOpenForEdit to determine if the asset is open for edit by the version control.</para>
+        <para>Query whether an asset file is open for edit in version control.</para>
       </summary>
-      <param name="assetPath">Is the path to the asset on disk relative to project folder.</param>
-      <param name="message">Used to give reason for not open.</param>
-      <param name="assetObject"></param>
-      <param name="assetOrMetaFilePath"></param>
+      <param name="assetObject">Object representing the asset whose status you wish to query.</param>
+      <param name="assetOrMetaFilePath">Path to the asset file or its .meta file on disk, relative to project folder.</param>
+      <param name="message">Returns a reason for the asset not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
       <returns>
-        <para>True is the asset can be edited.</para>
+        <para>True if the asset is considered open for edit by the selected version control system.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.IsOpenForEdit(System.String,System.String&amp;)">
       <summary>
-        <para>Use IsOpenForEdit to determine if the asset is open for edit by the version control.</para>
+        <para>Query whether an asset file is open for edit in version control.</para>
       </summary>
-      <param name="assetPath">Is the path to the asset on disk relative to project folder.</param>
-      <param name="message">Used to give reason for not open.</param>
-      <param name="assetObject"></param>
-      <param name="assetOrMetaFilePath"></param>
+      <param name="assetObject">Object representing the asset whose status you wish to query.</param>
+      <param name="assetOrMetaFilePath">Path to the asset file or its .meta file on disk, relative to project folder.</param>
+      <param name="message">Returns a reason for the asset not being open for edit.</param>
+      <param name="StatusQueryOptions">Options for how the version control system should be queried. These options can effect the speed and accuracy of the query.</param>
+      <param name="statusOptions"></param>
       <returns>
-        <para>True is the asset can be edited.</para>
+        <para>True if the asset is considered open for edit by the selected version control system.</para>
       </returns>
     </member>
     <member name="M:UnityEditor.AssetDatabase.IsSubAsset(UnityEngine.Object)">
@@ -11571,6 +11683,11 @@ This value is the number of screen pixels per point of interface space. For inst
         <para>Sets and gets target device type for the application to run on when building to Windows Store platform.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.EditorUserBuildSettings.wsaUWPSDK">
+      <summary>
+        <para>Sets and gets target UWP SDK to build Windows Store application against.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.EditorUserBuildSettings.xboxBuildSubtarget">
       <summary>
         <para>Xbox Build subtarget.</para>
@@ -12815,6 +12932,21 @@ More information - https:msdn.microsoft.comen-uslibrary/dn584397(v=vs.110).aspx.
     <member name="F:UnityEditor.GizmoType.Selected">
       <summary>
         <para>Draw the gizmo if it is selected.</para>
+      </summary>
+    </member>
+    <member name="T:UnityEditor.GraphicsJobMode">
+      <summary>
+        <para>Enum used to specify the graphics jobs mode to use.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.GraphicsJobMode.Legacy">
+      <summary>
+        <para>Legacy graphics jobs.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.GraphicsJobMode.Native">
+      <summary>
+        <para>Native graphics jobs.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.GUIDrawer">
@@ -16996,6 +17128,11 @@ If the target name is in the provided list of existing names, a unique name is g
         <para>Enable GPU skinning on capable platforms.</para>
       </summary>
     </member>
+    <member name="P:UnityEditor.PlayerSettings.graphicsJobMode">
+      <summary>
+        <para>Selects the graphics job mode to use on platforms that support both Native and Legacy graphics jobs.</para>
+      </summary>
+    </member>
     <member name="P:UnityEditor.PlayerSettings.graphicsJobs">
       <summary>
         <para>Enable graphics jobs (multi threaded rendering).</para>
@@ -17033,7 +17170,7 @@ If the target name is in the provided list of existing names, a unique name is g
     </member>
     <member name="P:UnityEditor.PlayerSettings.muteOtherAudioSources">
       <summary>
-        <para>Mute or allow audio from other applications to play in the background while the Unity application is running.</para>
+        <para>Stops or allows audio from other applications to play in the background while your Unity application is running.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PlayerSettings.productName">
@@ -21354,6 +21491,25 @@ For more information - https:msdn.microsoft.comlibrarywindowsappshh779671https:m
         <para>If set to true, visualization of portals is enabled.</para>
       </summary>
     </member>
+    <member name="T:UnityEditor.StatusQueryOptions">
+      <summary>
+        <para>Options for querying the version control system status of a file.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.StatusQueryOptions.ForceUpdate">
+      <summary>
+        <para>Force a refresh of the version control system status of the file. This is slow but accurate.
+
+See Also: AssetDatabase.IsOpenForEdit, AssetDatabase.IsMetaFileOpenForEdit.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEditor.StatusQueryOptions.UseCachedIfPossible">
+      <summary>
+        <para>Use the last known version control system status of the file. This is faster on average but less accurate than forcing an update, as it will cache the status of the file for a period of time.
+
+See Also: AssetDatabase.IsOpenForEdit, AssetDatabase.IsMetaFileOpenForEdit.</para>
+      </summary>
+    </member>
     <member name="T:UnityEditor.StereoRenderingPath">
       <summary>
         <para>Enum used to specify what stereo rendering path to use.</para>
@@ -22697,11 +22853,6 @@ Valid values are in the range [0-1], with higher values generating a tighter mes
     <member name="T:UnityEditor.TizenOSVersion">
       <summary>
         <para>Tizen OS compatibility.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEditor.TizenOSVersion.Version23">
-      <summary>
-        <para></para>
       </summary>
     </member>
     <member name="F:UnityEditor.TizenOSVersion.Version24">
